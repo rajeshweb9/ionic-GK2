@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+  
+       <ion-buttons slot="start">
+        <ion-back-button defaultHref="dashboard"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Ventures</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ventureListCard">
+    <ion-item lines="full">
+         <ion-avatar slot="start">
+        <img alt="" src="assets/images/venture1.jpg" />
+      </ion-avatar>
+
+      <ion-label class="ion-text-wrap">
+        <div>     
+            <div class="nameventure"><ion-text>Renuka city </ion-text></div>
+            <p>Postmaster, Madhapur, Hyderabad, Telangana</p>
+         </div>      
+      </ion-label>      
+    </ion-item>
+    
+    <div class="cardFooter">
+      <div class="plotsNo">
+        <ion-text><h2 class="colorCount1">1500</h2></ion-text><ion-text class="plotsNoText">Total Plots</ion-text>
+      </div>
+
+      <div class="plotsNo">
+        <ion-text><h2 class="colorCount2">5000</h2></ion-text><ion-text class="plotsNoText">Alloted</ion-text>
+      </div>
+
+      <div class="plotsNo">
+        <ion-text><h2 class="colorCount3">5000</h2></ion-text><ion-text class="plotsNoText">Available</ion-text>
+      </div>
+        <div class="iconBtBlock">
+          <ion-button routerLink="/layout-view" class="linearGradientGreen-sm">Layout</ion-button>
+        </div>
+    </div> 
+  </ion-card>
+
+  <ion-card class="ventureListCard" *ngFor="let row of listVenture">
+    <ion-item lines="full">
+         <ion-avatar slot="start">
+        <img alt="" src="assets/images/venture1.jpg" />
+      </ion-avatar>
+
+      <ion-label class="ion-text-wrap">
+        <div>     
+            <div class="nameventure"><ion-text>{{row.ventuername}}</ion-text></div>
+            <p>{{row.location}}</p>
+         </div>      
+      </ion-label>      
+    </ion-item>
+    
+    <div class="cardFooter">
+      <div class="plotsNo">
+        <ion-text><h2 class="colorCount1">1500</h2></ion-text><ion-text class="plotsNoText">Total Plots</ion-text>
+      </div>
+
+      <div class="plotsNo">
+        <ion-text><h2 class="colorCount2">5000</h2></ion-text><ion-text class="plotsNoText">Alloted</ion-text>
+      </div>
+
+      <div class="plotsNo">
+        <ion-text><h2 class="colorCount3">5000</h2></ion-text><ion-text class="plotsNoText">Available</ion-text>
+      </div>
+        <div class="iconBtBlock">
+          <ion-button routerLink="/layout-view" class="linearGradientGreen-sm">Layout</ion-button>
+        </div>
+    </div> 
+  </ion-card>
+</ion-content>

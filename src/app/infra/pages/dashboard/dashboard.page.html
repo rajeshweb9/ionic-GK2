@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" ></ion-back-button>
+    </ion-buttons> -->
+    <ion-title slot="start">Dashboard</ion-title>   
+    <ion-buttons class="userIcon" slot="end" routerLink="/login">
+      <ion-icon slot="icon-only" color="light" name="log-out-outline"></ion-icon>
+       <!-- <ion-icon slot="icon-only" color="light" name="person-circle-outline"></ion-icon> -->
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-border dashboardWrapp"> 
+  <ion-grid class="dashGrid ion-text-center">
+    <ion-row>
+      <ion-col routerLink="/transactionslist">
+        <div class="yearsCount">          
+            <h3>14</h3>
+            <ion-text>Years of experience</ion-text>         
+        </div>
+      </ion-col>     
+    </ion-row>   
+
+    <ion-row>  
+      <ion-col routerLink="">
+        <ion-card>
+          <!-- <ion-icon name="download"></ion-icon> -->
+          <ion-icon name="business"></ion-icon>
+        <ion-text><h4>About Us</h4></ion-text> 
+        </ion-card>
+      </ion-col> 
+      
+      <ion-col >
+        <ion-card routerLink="/ventures">
+        <div class="ion-text-center">      
+         <h5 class="ventureCount">04</h5>
+        </div>     
+        <ion-text><h4>Ventures</h4></ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>   
+  </ion-grid>
+</ion-content>

@@ -24,3 +24,156 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+    font-family: 'Open Sans ';
+    font-style: normal;
+    font-weight:400;
+    src: url('./assets/fonts/OpenSans-Regular.ttf')  format('truetype');   
+  }
+  
+  @font-face {
+    font-family: 'Open Sans ';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./assets/fonts/OpenSans-Medium.ttf') format('truetype');   
+  }
+  
+  @font-face {
+    font-family: 'Open Sans ';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./assets/fonts/OpenSans-SemiBold.ttf') format('truetype');   
+  }
+  
+
+
+// Default Styles
+.error-message{color:#f96b6b; font-weight: 400; font-size: 13px;}
+body{ outline:none !important;  font-family:var(--ion-font-family);}
+ion-toolbar{--background:var(--linear-gradient-green); box-shadow:0px 3px 6px rgb(166 139 173);
+    ion-title{--color:#fff; font-size: 17px;}
+    ion-back-button{--color:#fff;}
+    ion-buttons.userIcon{--bacground:transparent; --box-shadow: none;  margin-right:15px;}
+}
+
+ion-button{--border-radius:35px;}
+ion-content{ --ion-background-color:#F3F8FF;}
+ion-card{border-radius: 6px; box-shadow: 0px 3px 10px #DCE7F87D; --background:#fff;
+    ion-item{background:#fff; --background: #fff;}
+}
+
+ion-header{
+    ion-toolbar.ios{
+        ion-title{font-size: 14px;}           
+      }
+}
+
+ion-footer{ --ion-background-color:#ffffff;}
+
+
+.linearGradientGreen{--background:var(--linear-gradient-green); --color:#fff; --box-shadow:0px 3px 6px #c9c0cc;
+    --border-radius:35px;  width:100%;  font-size:15px; letter-spacing: 0px;  
+    --padding-start: 16px; --padding-end: 16px;   text-transform: capitalize;} 
+
+  .linearGradientGreen-sm{--background:var(--linear-gradient-green); --color:#fff; --box-shadow:0px 3px 6px #c9c0cc;
+    --border-radius:35px;  width:100%;  font-size:13px; letter-spacing: 0px;  
+    --padding-start: 16px; --padding-end: 16px;   text-transform: capitalize;} 
+
+// --background: url(./assets/images/loginbg.svg) no-repeat  center center / cover;
+.loginWrapp{
+    .loginTopImg{display: flex; align-items: center; justify-content: center; }
+    .loginMiddle{height: 100%; display: flex; align-items: center; justify-content: center;    
+        h1{font-weight:var( --ion-font-weight-light); color:var(--ion-color-dark); font-size:25px;    margin-bottom: 0px;}
+        ion-card{width: 79%; --background:#fff; box-shadow: 0px 3px 19px #0000001C;  padding-bottom:15px;}
+        ion-item{ --padding-start: 0px; }
+        ion-input{--color:var(--ion-color-dark); font-size:13px;}
+        ion-label{--color:var(--ion-color-dark); font-weight:var( --ion-font-weight-medium);}        
+        ion-button{ margin-top:20px;}
+         ion-text.forgotPassword{font-size:13px; font-weight:var(--ion-font-weight-normal);  float: right;  margin-top: 15px; color:var(--ion-color-dark-shade);}
+ 
+        .notRegistered{margin-top:15px;
+            ion-text{float: none !important;  text-align: center;  display: block; margin-bottom: 0px; font-size: 12px; font-weight:400;}
+            ion-button{height:17px; display: block; letter-spacing: 0px; text-align: center; font-size: 13px;
+                  --background:transparent; --box-shadow: none;
+                 --color:#5d3489; font-weight:600; --padding:0px; margin:0px; text-transform: capitalize;}
+        }
+    }
+} 
+
+
+.dashboardWrapp{box-shadow: 0px 3px 28px #00000047; border-top-left-radius:15px;
+    border-top-right-radius:15px; margin-top:-15px; background:var(--ion-color-danger-contrast);
+   ion-item{ --border-color:#e2e2e2; --padding-top:0; --padding-bottom:0; --inner-padding-top:0px; --inner-padding-bottom:0px;}
+        .dashGrid{padding-top:20px;             
+            ion-row{margin-bottom:20px;}
+            ion-icon{background:#f9f3ff; padding:17px; border-radius: 50%; font-size:47px; margin: auto; display: block; color:#5d3489;}
+             h4{font-size:14px; font-weight:var(--ion-font-weight-medium);color:#837691; 
+                text-align: center; margin-bottom:0px;}
+             ion-card{padding:12px;}
+            }
+
+        .yearsCount{
+            h3{margin:0px; padding:0px;  padding: 0px 0px 0px 0px; font-size:75px;  font-weight:600; margin: auto;
+              display: block;  color: #5d3489; line-height: 69px;} 
+              ion-text{color:#f1592a; font-size:13px; text-transform: uppercase;}
+            }
+
+    .ventureCount{background: #f9f3ff;
+        padding: 0px;
+        border-radius: 50%;
+        font-size: 41px;
+        margin: auto;
+        display: block;
+        color: #5d3489;
+        width: 2em;
+        height: 2em;
+        line-height: 83px;
+        font-weight: 600;
+        contain: strict;
+        fill: currentcolor;
+        box-sizing: content-box !important;}
+    }
+
+    .ventureListCard{padding:5px 10px 10px 10px;
+        ion-item{--inner-padding-end:0px;
+            --padding-top: 0px;
+            --padding-start: 0px;
+            --padding-end: 0px;
+            --padding-bottom: 0px;
+            margin: 0px 0px 4px 0px !important;
+            line-height: 16px;}
+
+            ion-label{margin:0px 0px 5px 0px; }
+        p{font-size: 12px; line-height: 15px;  color: #828282;} 
+        .borderBottom{border-bottom: solid 1px #e2e2e2;padding: 0px 0px 5px 0px; margin-bottom: 5px;}
+        ion-avatar{margin-top:0px;  margin-bottom:5px;}
+     .iAvatarLetter{background:#f0f5fd; border-radius:50%; width:41px; height:41px;
+         line-height:41px; font-size:25px; font-weight:var( --ion-font-weight-bold); color:#0FA9A6; text-align:center;}
+    
+        .nameventure{
+            ion-text{color:#535570; font-size:14px; font-weight:var(--ion-font-weight-bold);}
+            ion-text.dateTranList{color:#7B8994; font-size:12px; font-weight:var(--ion-font-weight-medium);}
+        }
+ 
+        .cardFooter{
+            .plotsNo{display:inline-block; padding-right:20px;   margin-top:4px;               
+                ion-text{line-height: 18px;text-align: center;font-weight: 600;                    
+                    h2{font-size:14px; font-weight:600;padding:0px 0px 0px 4px;margin: 0px; }      
+                    h2.colorCount1{color:#6e4da1;}                  
+                    h2.colorCount2{color:#4da171;}
+                    h2.colorCount3{color:#c67d48;}
+                }
+                .plotsNoText{ font-size: 12px; padding-top:2px;  color: #878787;}
+            }
+            .iconBtBlock{ display: inline-flex; float:right;}
+          
+      
+          
+        }    
+  
+        ion-avatar {margin-right: 11px; --border-radius:4px; width: 100px !important;
+             height: 100%;}
+    
+          
+    }

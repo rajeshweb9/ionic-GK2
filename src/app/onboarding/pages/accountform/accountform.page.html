@@ -1,0 +1,64 @@
+<ion-content class="loginWrapp" [scrollEvents]="false">
+  
+  <!-- <div class="loginTopImg"><ion-img src="./assets/images/gk-logo.jpg"></ion-img></div> -->
+   <div class="loginMiddle">
+ 
+    
+   <ion-card>
+     <ion-card-header>   
+       <ion-card-title><h1>Create Account</h1></ion-card-title>
+     </ion-card-header>
+   
+     <ion-card-content>
+      <form [formGroup]="loginForm">
+       <ion-item>
+         <ion-label position="stacked">Username</ion-label>
+         <ion-input placeholder="Enter Username" formControlName="userName"
+         [ngClass]="{ 'is-invalid': (submitted && form.userName.errors) || (form.userName.touched && form.userName.errors) }">
+        </ion-input>
+       </ion-item>
+       <div *ngIf="submitted||(form.userName.touched && form.userName.invalid)">
+        <small class="form-text error-message" *ngIf="form.userName.errors"> Username is required</small>
+      </div>
+ 
+       <ion-item>
+         <ion-label position="stacked">Password</ion-label>
+         <ion-input placeholder="Enter Password" formControlName="password"  [ngClass]="{ 'is-invalid': (submitted && form.password.errors) || (form.password.touched && form.password.errors) }">
+          </ion-input>
+       </ion-item>
+       <div *ngIf="submitted||(form.password.touched && form.password.invalid)">
+        <small class="form-text error-message" *ngIf="form.password.errors"> Password is required</small>
+      </div>
+
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input placeholder="Enter Email" formControlName="email"  [ngClass]="{ 'is-invalid': (submitted && form.email.errors) || (form.email.touched && form.email.errors) }">
+         </ion-input>
+      </ion-item>
+      <div *ngIf="submitted||(form.email.touched && form.email.invalid)">
+       <small class="form-text error-message" *ngIf="form.email.errors"> Email Id is required</small>
+     </div>
+
+     <ion-item>
+      <ion-label position="stacked">Phone</ion-label>
+      <ion-input placeholder="Enter Pnone No" formControlName="phoneNo"  [ngClass]="{ 'is-invalid': (submitted && form.phoneNo.errors) || (form.phoneNo.touched && form.phoneNo.errors) }">
+       </ion-input>
+    </ion-item>
+    <div *ngIf="submitted||(form.phoneNo.touched && form.phoneNo.invalid)">
+     <small class="form-text error-message" *ngIf="form.phoneNo.errors"> Pnone No is required</small>
+   </div>
+  
+       <ion-button class="linearGradientGreen" routerLink="/dashboard" (click)="createAccount()">Create Account</ion-button>
+      </form>
+
+       <div class="notRegistered">
+         <ion-text class="dark">Already have an Account?</ion-text>
+         <ion-button routerLink="/login">Login</ion-button>
+       </div>
+      
+     </ion-card-content>
+   </ion-card>
+   </div>
+ 
+ </ion-content>
+

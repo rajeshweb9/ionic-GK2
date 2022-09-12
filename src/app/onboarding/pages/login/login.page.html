@@ -1,0 +1,54 @@
+<ion-content class="loginWrapp" [scrollEvents]="false">
+  
+  <!-- <div class="loginTopImg"><ion-img src="./assets/images/gk-logo.jpg"></ion-img></div> -->
+   <div class="loginMiddle">
+ 
+    
+   <ion-card>
+     <ion-card-header>   
+       <ion-card-title><h1>Login</h1></ion-card-title>
+     </ion-card-header>
+   
+     <ion-card-content>
+      <form [formGroup]="loginForm">
+       <ion-item>
+         <ion-label position="stacked">Username</ion-label>
+         <ion-input placeholder="Enter Username" formControlName="userName"
+         [ngClass]="{ 'is-invalid': (submitted && form.userName.errors) || (form.userName.touched && form.userName.errors) }">
+        </ion-input>
+       </ion-item>
+       <div *ngIf="submitted||(form.userName.touched && form.userName.invalid)">
+        <small class="form-text error-message" *ngIf="form.userName.errors"> Username is required</small>
+      </div>
+ 
+       <ion-item>
+         <ion-label position="stacked">Password</ion-label>
+         <ion-input placeholder="Enter Password" formControlName="password"  [ngClass]="{ 'is-invalid': (submitted && form.password.errors) || (form.password.touched && form.password.errors) }">
+          </ion-input>
+       </ion-item>
+       <div *ngIf="submitted||(form.password.touched && form.password.invalid)">
+        <small class="form-text error-message" *ngIf="form.password.errors"> Password is required</small>
+      </div>
+ 
+ 
+   <ion-text class="dark forgotPassword">Forgot Password?</ion-text>  
+ 
+   <!-- <ion-item>
+       <ion-input placeholder="Enter captcha"></ion-input> 
+       <ion-img [src]="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCABkAMgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDvqcBTRTwKstigU8CkAp4FIzbFApx6UCkJoJWrGsajY04mo2NWjeCGOagc1I5qBzTNBjmmCg8mnAU0NCinCkpRVFC0ooFLSEFDHApajc0Ihsjc1CTk09zTBWi0RhJjgKeBSAU8Cs5MxbHAU8CkAp4Fc0mZNiiilFFQInAod1iXc5wOg4ySfQClAqOMeZdSO3/LL5FHoSASf1A/D3rc7WxyvcNysCAejyYP6A/zqaFpGJEkWwjuGyD9O/6U4CnikZsD0pjGnE1GTTRcENY1E5p7GoXNWbojc1C5p7moTyaBgKeKjaRI8bjyegAyT+FH2iMfe3qPVkIH59qtFomFLUZljU43ZPooyfyFOSRHyFYEjqO4/ClcVx4paKWkJiMcCoHNSOagc1cUZTYwnJpwFNFSAVUmc7YoFSAU0CpAK55MzbFAp4pAKcKwepmKKKUUUDJwKZH+7upEb/lrh1PrgAEfoD+PtUoFDxLKu1x7gg4IPqDWp1MkAokdY42dzhVGSaiWO5XgToR2Lx5P6ED9KPJZmDTyeYVOQoGFB9cf4mghasgNxHZ2okum8sMxY5BOMknBx9cUjahagrmdQG6E9Pz6U3Wf+QTdf9czUTCM6IBIB5f2cZ/75ou07FpyUml2uWnNQOag05pDplv5ud2wdf0qRzVp3VzeMuaKYxzUZIVSzHAAyaU8mhkDxsh6MCDVItISBCF8xx+8cZb29vwp0pOFVTgucZ9O/wDSkgcvGN33xww9DSzfLskPRGy30ximymPjjSNAiKFUdhSvGHwejDow6io1O+5+U/KikH3Jx/LH61MzBFLMcAUhMWhjgU2IMIhv+8eSPTPOKRzQtSG9CrL+9uDGxOxVBwDjJJPX8v1ppKJtQYUE4UAfj/SlmTcwdWKuOMjuPQ0yOI798j727cYA+grVaGEmTAU8CkAp4FZyZi2OAp4FIBTwK5pMybFFOFIKcKhCQCig8CirSLSLEkZkjKB3Qn+JOorE0qbUp7q+tRcg+S+3zXUErgkcD1OP0rfArF8P/wDIU1j/AK7f+zPWVVfvIfP8jovoxlxc6lpeo28Tzi7juTtUMoU7uB1H1FS6hFqkVtJdLfjdGC5jWMBcDqOeaZ4g/wCQppH/AF2/9mStDUz/AMSy7/64v/6CalRvzq70218i4rYz7i8N34cMpRjJNGVCopOW6dvpRZ2ttJZRfLLtAGY3Zgobv8p9/wAKfoJ/4klv/wAC/wDQjVxzXRSXNGMn2Q/ZJy5mRuahc09zUJ5NbGoCnimllRSzsFUdSTgUz7Xbf8/EP/fYq0VdIe0QZtysyP03L3/xo8qRuHmbHooAz/n2xTRd23/PxD/32KmjdJF3RurL6qcikF0Zup6Y1xbwW9s7Rx+aCwHRRg5NV/8AhGrYDL3dxxzkkYH6Vu1n6o7TGPT4jh5/vkfwxjqfx6UrElTQLNYvOulZykhKxbzyVB6/ia0pZVU4J59AMn8qc+2CDCLhY14UegFRBdi8nLHlj6mqijOTEzu5pwFQ3DTJbyPbxCWULlELbdx9M9q4nxDq+vJc2tvdRrZRyOCFhkyWwR1YH9Kc5WMHqd+BUgFNAqQCsZMybFAp4qnqUJkspWWWWJ0QsrRuV5x3x1rI8PNe31pMsl5KqB+X3bn6dAT0Fckp2ly2EoXXNc6UUorm7K5u7LxEdPmuZJ4n6GQ5I4yP8K6Q8Cqpy5huHKNc0VG5orqjHQtI0ZI/MjKb2TP8SnBFU7bSLe0nM0MtwHY5bMmd319a0BSE1k4Rk7tFq5m3ekwXUwlmlnLKcrh8bfp6U+ezWa3EEk05TBB+flgfWrZNRsapUoa6bm8UUrWyjsl2wvLs7KzZAp7mpHNQOauMVFWRYxzTBQeTTgKpDRS1qN5dIuI41LMwAAH1FZcfhKHYPMupC2OdqjFdHSim0mTOjCbvJHJal4et7O3UxzyyTSOEiTA+ZjXTadaJY2MVsnOwcn1Pc1Rs/wDiY6tJenmC2zFB6Fv4m/pWxUpIzpU4puUUIxCqWOcAZ4GaoadHIxlvbhSss54U9UQdB/WtGo3NUjRsilAdGU9CMVXWTcdj8OOo9fcVM5qMqrjDKCPQitErGEmBcLx1Y9FHU1xXjtdmo6UDyecn1O4ZrtiPKiZoYdzAZCLgFj+PFcj4l0zW9ZvbaaDTREtuON86Ek5z2PtWNRmaep24FPAqlp9xeTjF5p7WpAznzVcE+gxz+lXwKwkzGRFef8eM/wD1zb+VY/g//jxn/wCun9BWveQTXEDRQzLFvBViU3HB9ORVPStJuNM3rFeI6OclWh749d1c7T507Fxa5Grmdc/8jrD+H/oNdK5rGl0S5fURfnUFEwIIxBxwMf3q1MuEAkYM2OSBgH8K1oQd3ddS3Z2sNY5NFJRXaUbJ6UxjTiajJrFFQQ1jUTmnsahc1ZuiNzULmnuahPJoGAp4pAKdVotCis/WLiSO3S2tz/pN03lx+3q34CtAVn2dvLNqc99coU2/uoFPZe7fjSZFS7Vl1LlnbR2lrHbxDCRrge/vU9FLSDbQRjgVA5qRzUDmrijObGE5NOApoqQCqkznbFAqQCmgVIBXPJmbYoFPFIBThWD1MxRSigUHgU0UhrmoGOTT3NR10QVkbRQUUUVoUazUw0UVkjWBC9QuaKKZqQPTBRRTQ0PFKKKKosdSiiikSxaG6UUUiWQuahbrRRWsTCQop4ooqJGLJBTxRRXPIyY8U4UUVkShRSPRRVx3LiQN1ptFFdS2N0FFFFMD/9k="></ion-img>
+       <a href="javascript:void(0)" class="cpt-btn reload" (click)="createCaptcha()">&#x21bb;</a>
+     </ion-item> -->
+     <!-- <ion-button  routerLink="/layout-view" class="linearGradientGreen-sm">Layout</ion-button> -->
+       <ion-button class="linearGradientGreen" routerLink="/dashboard" (click)="login()">Login</ion-button>
+      </form>
+
+       <div class="notRegistered">
+         <ion-text class="dark">Not registered Yet?</ion-text>
+         <ion-button routerLink="/accountform">Create an Account</ion-button>
+       </div>
+      
+     </ion-card-content>
+   </ion-card>
+   </div>
+ 
+ </ion-content>
